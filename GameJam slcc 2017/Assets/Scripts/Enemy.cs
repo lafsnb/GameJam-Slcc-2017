@@ -18,9 +18,10 @@ public class Enemy : MonoBehaviour {
 	public Transform target;
 	NavMeshAgent agent;
 
-	void Start() {
+	void Start () {
 		agent = GetComponent<NavMeshAgent>();
 	}
+
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (EnemyState);
