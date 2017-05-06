@@ -57,10 +57,13 @@ public class LoadLevelFromFile : MonoBehaviour {
 				else if (items [i] == "RL")
 					myTransform = RL;
 				else if (items [i] == "YK")
+					myTransform = YK;
+				else if (items [i] == "YL")
 					myTransform = YL;
 				else if (items [i] == "GK")
+					myTransform = GK;
+				else if (items [i] == "GL")
 					myTransform = GL;
-
 				if(myTransform != null)
 					Instantiate (myTransform, new Vector3 (i, 0, -line), Quaternion.identity);
 
