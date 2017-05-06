@@ -1,0 +1,14 @@
+W - Wall
+P - Path
+S - Start
+E - End
+G - Guard
+D - Door
+BK - Blue Key
+BL - Blue Lock
+RK - Red Key
+RL - Red Lock
+YK - Yellow Key
+YL - Yellow Lock
+GK - Green Key
+GL - Green Lock
