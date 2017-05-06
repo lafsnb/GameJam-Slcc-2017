@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23674923839609062}
   - component: {fileID: 114571160762274790}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Red Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 520d37fcb00b94f1e99c1cf614a14dab, type: 2}
+  - {fileID: 2100000, guid: acc41f990a2c84377ae168a2b4137fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,4 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac48d82b035d44d7cbff1c4c4264a3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2

@@ -25,7 +25,6 @@ public class LoadLevelFromFile : MonoBehaviour {
 
 	void OnEnable()
 	{
-		Debug.Log("Fork");
 		Create ();
 	}
 	// Use this for initialization
