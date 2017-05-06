@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour {
 
-	public static Door[] blueDoors = new Door[6];
+	public Door[] blueDoors = new Door[6];
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,7 @@ public class DoorManager : MonoBehaviour {
 		
 	}
 
-	public static void unlockDoors(List<DoorType> keys) {
+	public void unlockDoors(List<DoorType> keys) {
 		if (keys.Contains (DoorType.Blue)) {
 			foreach (Door door in blueDoors) {
 				door.gameObject.GetComponent<BoxCollider> ().enabled = false;
