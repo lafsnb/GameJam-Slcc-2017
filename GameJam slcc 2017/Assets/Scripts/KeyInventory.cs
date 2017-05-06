@@ -19,7 +19,7 @@ public class KeyInventory : MonoBehaviour {
 	public static void AddKey(DoorType type) {
 		if (!keys.Contains (type)) {
 			keys.Add (type);
-			DoorManager.unlockDoors (keys);
+			//DoorManager.unlockDoors (keys);
 		}
 		print("key added");
 	}
