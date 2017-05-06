@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	Vector2 velocity;
+	Vector3 velocity;
 	Rigidbody rigidbody;
 	public float speed = 2.0f;
 
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		velocity = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical")) * speed;
+		velocity = new Vector3 (Input.GetAxis ("Horizontal"),0,Input.GetAxis ("Vertical")) * speed;
 		rigidbody.velocity = velocity;
 	}
 }
