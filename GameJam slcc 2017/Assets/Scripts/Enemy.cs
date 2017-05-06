@@ -27,4 +27,7 @@ public class Enemy : MonoBehaviour {
 		Debug.Log (EnemyState);
 		agent.SetDestination(target.position);
 	}
+
+
+
 }
