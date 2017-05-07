@@ -8,6 +8,7 @@ public class EnemyCollision : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
+			LevelManagement.CurrentLevel = SceneManager.GetActiveScene ().name;
 			SceneManager.LoadScene ("Game Over");
 		}
 	}
