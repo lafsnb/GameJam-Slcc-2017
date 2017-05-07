@@ -21,9 +21,10 @@ public class Enemy : MonoBehaviour {
     private Transform player;
     public float viewDistance = 2f;
     public float viewAngle = 20f;
+	public float rotationSpeed = 3.0f;
     private Vector3 lastKnown;
 
-    int counter = 1;
+    int counter = 0;
 
 	NavMeshAgent agent;
 
@@ -36,22 +37,47 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		Debug.Log (EnemyState);
-
+		Rotate ();
         view();
     }
 
 	void OnTriggerEnter(Collider other) { // Collide with destinations
 		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
-			if (counter >= targets.Length - 1) {
-				counter = 0;
-			} else {
-				counter++;
+			if (targets.Length > 1) {
+				if (counter >= targets.Length - 1) {
+					counter = 0;
+				} else {
+					counter++;
+				}
+				agent.SetDestination (targets [counter].position);	
+			} else if (targets.Length == 1){
+				//set rotation
+				//transform.Rotate(0, 90, 0);
 			}
-			agent.SetDestination (targets [counter].position);	
 		}
 	}
 
-	void ReachDestination() {
+	void OnTriggerStay(Collider other) {
+		print ("something");
+		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
+			print ("Please print this!!!");
+			transform.Rotate (0, 90, 0);
+		}
+		//print ("this is running");
+	}
+
+	private void Rotate () {
+		Quaternion newRotation = Quaternion.AngleAxis (90, Vector3.up);
+		transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, .05f);
+	}
+
+//	private void RotateTowards (Transform target) {
+//		Vector3 direction = (target.position - transform.position).normalized;
+//		Quaternion lookRotation = Quaternion.LookRotation(direction);
+//		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+//	}
+//
+	void DoubleTake() {
 
 	}
 
@@ -84,8 +110,14 @@ public class Enemy : MonoBehaviour {
             }
         }
         if(EnemyState == State.Chasing)agent.SetDestination(lastKnown);
-        if(transform.position.x == lastKnown.x && transform.position.z == lastKnown.z)
-            agent.SetDestination(targets[counter].position);
-
+		if (transform.position.x == lastKnown.x && transform.position.z == lastKnown.z) {
+			agent.SetDestination (targets [counter].position);
+			EnemyState = State.Patrolling;
+		}
     }
+
+//	void OnDrawGizmos()
+//	{
+//		Gizmos.DrawRay (transform.position, player.position - transform.position);
+//	}
 }

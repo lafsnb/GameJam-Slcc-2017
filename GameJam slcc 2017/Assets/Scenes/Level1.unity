@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.6985294, g: 0.6933932, b: 0.6933932, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1779,10 +1779,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4427322726945368, guid: 6df140347ab47604fae9a5b2e2dbd437, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114081065179110826, guid: 6df140347ab47604fae9a5b2e2dbd437,
+        type: 2}
+      propertyPath: targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 286506837}
+    - target: {fileID: 114081065179110826, guid: 6df140347ab47604fae9a5b2e2dbd437,
+        type: 2}
+      propertyPath: targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 158673449}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6df140347ab47604fae9a5b2e2dbd437, type: 2}
   m_IsPrefabParent: 0
@@ -2211,27 +2217,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1116369934 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1237308071309352, guid: 6df140347ab47604fae9a5b2e2dbd437,
-    type: 2}
-  m_PrefabInternal: {fileID: 936242694}
---- !u!114 &1116369942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1116369934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41bd111c71234183bf27e5bba099d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyState: 0
-  playerTarget: {fileID: 0}
-  targets:
-  - {fileID: 286506837}
-  - {fileID: 158673449}
 --- !u!1 &1132643677
 GameObject:
   m_ObjectHideFlags: 0
