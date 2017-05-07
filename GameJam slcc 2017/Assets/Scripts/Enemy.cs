@@ -15,17 +15,32 @@ public class Enemy : MonoBehaviour {
 
 	public State EnemyState = State.Patrolling;
 
-	public Transform target;
+	public Transform playerTarget = null;
+	public Transform[] targets = new Transform[2];
+
+	int counter = 0;
+
 	NavMeshAgent agent;
 
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
+		agent.SetDestination(targets[counter].position);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (EnemyState);
-		agent.SetDestination(target.position);
+	}
+
+	void OnTriggerEnter(Collider other) { // Collide with destinations
+		if (other.tag == "AI Destination") {
+			if (counter >= targets.Length - 1) {
+				counter = 0;
+			} else {
+				counter++;
+			}
+			agent.SetDestination (targets [counter].position);	
+		}
 	}
 
 
