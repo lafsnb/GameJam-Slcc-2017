@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
 	public float rotationSpeed = 3.0f;
 	public float lastKnownRadius = 0.3f;
     private Vector3 lastKnown;
+	private Light light;
 
 
     int counter = 0;
@@ -34,6 +35,8 @@ public class Enemy : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(targets[counter].position);
         player = GameObject.Find("Player").transform;
+		light = transform.GetChild (0).gameObject.GetComponent<Light> ();
+		light.color = Color.yellow;
     }
 
     // Update is called once per frame
@@ -41,8 +44,9 @@ public class Enemy : MonoBehaviour {
 		Debug.Log (EnemyState);
         view();
 
-		if(EnemyState == State.Chasing)
-			agent.SetDestination(lastKnown);
+		if (EnemyState == State.Chasing) {
+			agent.SetDestination (lastKnown);
+		}
     }
 
 	void OnTriggerEnter(Collider other) { // Collide with destinations
@@ -78,12 +82,15 @@ public class Enemy : MonoBehaviour {
                     if (hitInfo.collider.tag == "Player")
                     {
                         EnemyState = State.Chasing;
-                        lastKnown = player.position;
+						lastKnown = player.position;
+						light.color = Color.red;
                     }
 
                     else
                     {
                         if(EnemyState == State.Chasing) EnemyState = State.Alerted;
+						light.color = Color.yellow;
+
                     }
                 }
                 else
@@ -104,6 +111,7 @@ public class Enemy : MonoBehaviour {
 
 			agent.SetDestination (targets [counter].position);
 			EnemyState = State.Patrolling;
+			light.color = Color.yellow;
 			print ("I lost him boss :(");
 
 		}
