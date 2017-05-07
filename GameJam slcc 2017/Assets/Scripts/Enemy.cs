@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
 	public Transform playerTarget = null;
 	public Transform[] targets = new Transform[2];
 
-	int counter = 0;
+	int counter = 1;
 
 	NavMeshAgent agent;
 
@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	void ReachDestination() {
 
-
+	}
 }
