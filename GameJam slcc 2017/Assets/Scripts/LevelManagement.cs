@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class LevelManagement {
+public static class LevelManagement{
 	public static string CurrentLevel;
 }

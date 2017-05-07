@@ -190,6 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009d5f2c7a75ab249abf0bc82de30930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 5
+  SceneName: 
+  loadLast: 1
 --- !u!1 &1286744985
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +217,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286744985}
-  m_Text: You have been caught.
+  m_Text: You have been caught
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1.24
