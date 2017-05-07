@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434dd85c744c79044b2801970a52831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 88b3d347f2893914fb92827ac8b62ec0, type: 3}
+  textAsset: {fileID: 4900000, guid: 6e6400f9b44b63b49bbdf463ffab35b6, type: 3}
   W: {fileID: 4734472387068872, guid: 79b086b1da55cf746906e1868c2c423c, type: 2}
   P: {fileID: 4984094507492406, guid: d1f8e7751e626f544bf623137bfb940c, type: 2}
-  S: {fileID: 4036195648286316, guid: 15a9254c367d9445988ecb73756138f5, type: 2}
+  S: {fileID: 4573740541885734, guid: 15a9254c367d9445988ecb73756138f5, type: 2}
   E: {fileID: 4835364428970116, guid: 25a9f8e89283a494c9541c7b351e238f, type: 2}
   G: {fileID: 4427322726945368, guid: 6df140347ab47604fae9a5b2e2dbd437, type: 2}
   D: {fileID: 4729105714090442, guid: a7b847f53db8340ec8317afe2422e41e, type: 2}

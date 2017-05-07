@@ -37,49 +37,24 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		Debug.Log (EnemyState);
-		Rotate ();
         view();
     }
 
 	void OnTriggerEnter(Collider other) { // Collide with destinations
 		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
-			if (targets.Length > 1) {
 				if (counter >= targets.Length - 1) {
 					counter = 0;
 				} else {
 					counter++;
 				}
 				agent.SetDestination (targets [counter].position);	
-			} else if (targets.Length == 1){
-				//set rotation
-				//transform.Rotate(0, 90, 0);
-			}
 		}
 	}
 
-	void OnTriggerStay(Collider other) {
-		print ("something");
-		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
-			print ("Please print this!!!");
-			transform.Rotate (0, 90, 0);
-		}
-		//print ("this is running");
-	}
-
-	private void Rotate () {
-		Quaternion newRotation = Quaternion.AngleAxis (90, Vector3.up);
-		transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, .05f);
-	}
-
-//	private void RotateTowards (Transform target) {
-//		Vector3 direction = (target.position - transform.position).normalized;
-//		Quaternion lookRotation = Quaternion.LookRotation(direction);
-//		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-//	}
-//
-	void DoubleTake() {
-
-	}
+	//private void Rotate () {
+	//	Quaternion newRotation = Quaternion.AngleAxis (90, Vector3.up);
+	//	transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, .05f);
+	//}
 
     private void view()
     {
@@ -111,13 +86,9 @@ public class Enemy : MonoBehaviour {
         }
         if(EnemyState == State.Chasing)agent.SetDestination(lastKnown);
 		if (transform.position.x == lastKnown.x && transform.position.z == lastKnown.z) {
-			agent.SetDestination (targets [counter].position);
+			agent.SetDestination (targets [counter++].position);
 			EnemyState = State.Patrolling;
 		}
     }
 
-//	void OnDrawGizmos()
-//	{
-//		Gizmos.DrawRay (transform.position, player.position - transform.position);
-//	}
 }
