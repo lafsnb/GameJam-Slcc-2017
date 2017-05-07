@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Key : MonoBehaviour {
 
 	public DoorType type;
-
+	public Sprite mySprite;
 	// Use this for initialization
 	void Start () {
 		
@@ -46,6 +46,7 @@ public class Key : MonoBehaviour {
             if (parentDoor != null)
             {
                 foreach(Transform child in parentDoor.transform) {
+					child.GetChild (0).gameObject.GetComponent<SpriteRenderer> ().sprite = mySprite;
                     child.gameObject.layer = 8;
                 }
             }
