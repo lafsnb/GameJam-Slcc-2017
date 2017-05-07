@@ -22,7 +22,9 @@ public class Enemy : MonoBehaviour {
     public float viewDistance = 2f;
     public float viewAngle = 20f;
 	public float rotationSpeed = 3.0f;
+	public float lastKnownRadius = 0.3f;
     private Vector3 lastKnown;
+
 
     int counter = 0;
 
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(targets[counter].position);
-        player = GameObject.Find("Player(Clone)").transform;
+        player = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
@@ -98,7 +100,7 @@ public class Enemy : MonoBehaviour {
 //		}
 
 		if (PointInsideSphere(new Vector2 (transform.position.x, transform.position.z), 
-			new Vector2(lastKnown.x, lastKnown.z), 0.3f)) {
+			new Vector2(lastKnown.x, lastKnown.z), lastKnownRadius)) {
 
 			agent.SetDestination (targets [counter].position);
 			EnemyState = State.Patrolling;
