@@ -1,7 +1,7 @@
 6,13
 W,W,W,W,W,W,
 W,P,P,P,W,W,
-S,P,BK,P,YL,E,
+W,S,P,BK,YL,E,
 W,P,P,P,W,W,
 W,W,BL,W,W,W,
 W,P,P,P,W,W,
