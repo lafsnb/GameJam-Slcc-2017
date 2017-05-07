@@ -24,7 +24,7 @@ public class View : MonoBehaviour {
 				RaycastHit hitInfo;
 				if (Physics.Raycast (transform.position, fromEnemyToPlayer, out hitInfo)) {
 					if (hitInfo.collider.tag == "Player")
-						transform.gameObject.GetComponent<Enemy> ().EnemyState = State.Alerted;
+						transform.gameObject.GetComponent<Enemy> ().EnemyState = State.Chasing;
 					else
 						Debug.Log ("something's in the way");
 				}
@@ -34,10 +34,5 @@ public class View : MonoBehaviour {
 			}
 		}
 
-	}
-
-	void OnDrawGizmos()
-	{
-		Gizmos.DrawRay (transform.position, player.position - transform.position);
 	}
 }
