@@ -3940,10 +3940,10 @@ GameObject:
   m_Component:
   - component: {fileID: 639968657}
   - component: {fileID: 639968656}
-  - component: {fileID: 639968655}
   - component: {fileID: 639968654}
   - component: {fileID: 639968653}
   - component: {fileID: 639968652}
+  - component: {fileID: 639968655}
   m_Layer: 10
   m_Name: Player(Clone)
   m_TagString: Player
@@ -4010,8 +4010,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &639968655
-BoxCollider:
+--- !u!135 &639968655
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -4020,7 +4020,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &639968656
 MeshFilter:
@@ -4037,7 +4037,7 @@ Transform:
   m_GameObject: {fileID: 639968651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 0.31, z: -1}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 405381237}
   m_Father: {fileID: 0}
