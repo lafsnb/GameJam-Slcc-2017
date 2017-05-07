@@ -38,17 +38,23 @@ public class Enemy : MonoBehaviour {
     void Update () {
 		Debug.Log (EnemyState);
         view();
+
+		if(EnemyState == State.Chasing)
+			agent.SetDestination(lastKnown);
     }
 
 	void OnTriggerEnter(Collider other) { // Collide with destinations
 		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
 				if (counter >= targets.Length - 1) {
 					counter = 0;
+//					print ("set to 0");
 				} else {
 					counter++;
+//					print ("counter++");
 				}
 				agent.SetDestination (targets [counter].position);	
 		}
+
 	}
 
 	//private void Rotate () {
@@ -84,11 +90,25 @@ public class Enemy : MonoBehaviour {
 
             }
         }
-        if(EnemyState == State.Chasing)agent.SetDestination(lastKnown);
-		if (transform.position.x == lastKnown.x && transform.position.z == lastKnown.z) {
-			agent.SetDestination (targets [counter++].position);
+
+//		if (transform.position.x == lastKnown.x && transform.position.z == lastKnown.z) {
+//			agent.SetDestination (targets [counter++].position);
+//			EnemyState = State.Patrolling;
+//			print ("I lost him boss :(");
+//		}
+
+		if (PointInsideSphere(new Vector2 (transform.position.x, transform.position.z), 
+			new Vector2(lastKnown.x, lastKnown.z), 0.3f)) {
+
+			agent.SetDestination (targets [counter].position);
 			EnemyState = State.Patrolling;
+			print ("I lost him boss :(");
+
 		}
     }
+
+	bool PointInsideSphere(Vector2 point, Vector2 center, float radius) {
+		return (Vector2.Distance(point, center) < radius);
+	}
 
 }
