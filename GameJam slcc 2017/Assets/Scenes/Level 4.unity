@@ -5684,7 +5684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1636385599256208, guid: 15a9254c367d9445988ecb73756138f5, type: 2}
       propertyPath: m_Name
-      value: Player(Clone)
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a9254c367d9445988ecb73756138f5, type: 2}
@@ -13073,6 +13073,7 @@ MonoBehaviour:
   viewDistance: 5
   viewAngle: 45
   rotationSpeed: 3
+  lastKnownRadius: 0.3
 --- !u!114 &1356282754
 MonoBehaviour:
   m_ObjectHideFlags: 0
