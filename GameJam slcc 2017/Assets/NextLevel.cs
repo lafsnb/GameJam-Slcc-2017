@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour {
 
-	private static int level;
+	public string level = "Game Over";
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +14,6 @@ public class NextLevel : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player")
-			SceneManager.LoadScene (++level);
+			SceneManager.LoadScene (level);
 	}
 }
