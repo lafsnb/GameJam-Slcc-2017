@@ -14,9 +14,10 @@ TagManager:
   - UI
   - 
   - 
-  - Door
+  - Unlocked Doors
   - Enemy
   - Player
+  - Locked Doors
   - AI Destination
   - 
   - 

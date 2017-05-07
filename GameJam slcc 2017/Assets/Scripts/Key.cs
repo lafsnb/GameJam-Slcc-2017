@@ -18,7 +18,29 @@ public class Key : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
-			KeyInventory.AddKey (type);
+            GameObject parentDoor = null;
+            switch(type)
+            {
+                case (DoorType.Blue):
+                    parentDoor = GameObject.Find("blueDoors");
+                    break;
+                case (DoorType.Red):
+                    parentDoor = GameObject.Find("redDoors");
+                    break;
+                case (DoorType.Yellow):
+                    parentDoor = GameObject.Find("yellowDoors");
+                    break;
+                case (DoorType.Green):
+                    parentDoor = GameObject.Find("greenDoors");
+                    break;
+            }
+            if (parentDoor != null)
+            {
+                foreach(Transform child in parentDoor.transform) {
+                    child.gameObject.layer = 8;
+                }
+            }
+            Destroy(gameObject);
 		}
 	}
 }

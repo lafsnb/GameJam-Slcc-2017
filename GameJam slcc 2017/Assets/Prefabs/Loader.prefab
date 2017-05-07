@@ -46,12 +46,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264349695532144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434dd85c744c79044b2801970a52831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 57f267ac7242b4d258f169e8b1b6114e, type: 3}
+  textAsset: {fileID: 4900000, guid: 88b3d347f2893914fb92827ac8b62ec0, type: 3}
   W: {fileID: 4734472387068872, guid: 79b086b1da55cf746906e1868c2c423c, type: 2}
   P: {fileID: 4984094507492406, guid: d1f8e7751e626f544bf623137bfb940c, type: 2}
   S: {fileID: 4036195648286316, guid: 15a9254c367d9445988ecb73756138f5, type: 2}

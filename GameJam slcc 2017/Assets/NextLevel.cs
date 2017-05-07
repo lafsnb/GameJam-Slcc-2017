@@ -14,6 +14,6 @@ public class NextLevel : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player")
-			SceneManager.LoadScene (level++);
+			SceneManager.LoadScene (++level);
 	}
 }
