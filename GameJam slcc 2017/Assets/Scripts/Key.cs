@@ -17,8 +17,10 @@ public class Key : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		var HUD = GameObject.Find ("Key Hud");
+
 		if (other.tag == "Player") {
+			Camera.main.GetComponent<AudioSource> ().Play ();
+			var HUD = GameObject.Find ("Key Hud");
             GameObject parentDoor = null;
             switch(type)
             {
