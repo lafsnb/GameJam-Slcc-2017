@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour {
 
+	public AudioClip clip;
 	public string level = "Game Over";
 	// Use this for initialization
 	void Start () {
@@ -15,5 +16,6 @@ public class NextLevel : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 			SceneManager.LoadScene (level);
+		BGM.Instance.transform.GetComponent<AudioSource> ().PlayOneShot (clip);
 	}
 }

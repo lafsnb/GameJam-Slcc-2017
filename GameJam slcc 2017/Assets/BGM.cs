@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour {
 
-	private static BGM Instance;
+	private static BGM instance;
+	public static BGM Instance
+	{
+		get{ return instance; }
+	}
 	// Use this for initialization
 	void Start () {
-		if (Instance != null)
+		if (instance != null)
 			Destroy (gameObject);
 		else
-			Instance = this;
+			instance = this;
 		DontDestroyOnLoad(gameObject);
 		
 	}
