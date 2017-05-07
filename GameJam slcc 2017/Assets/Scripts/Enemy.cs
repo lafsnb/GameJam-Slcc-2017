@@ -63,7 +63,6 @@ public class Enemy : MonoBehaviour {
         {
             if (EnemyState == State.Patrolling || EnemyState == State.Chasing)
             {
-                Debug.Log("Got here");
                 RaycastHit hitInfo;
                 if (Physics.Raycast(transform.position, fromEnemyToPlayer, out hitInfo))
                 {
@@ -71,13 +70,11 @@ public class Enemy : MonoBehaviour {
                     {
                         EnemyState = State.Chasing;
                         lastKnown = player.position;
-                        print(lastKnown);
                     }
 
                     else
                     {
                         if(EnemyState == State.Chasing) EnemyState = State.Alerted;
-                        Debug.Log("something's in the way");
                     }
                 }
                 else
@@ -87,5 +84,8 @@ public class Enemy : MonoBehaviour {
             }
         }
         if(EnemyState == State.Chasing)agent.SetDestination(lastKnown);
+        if(transform.position.x == lastKnown.x && transform.position.z == lastKnown.z)
+            agent.SetDestination(targets[counter].position);
+
     }
 }

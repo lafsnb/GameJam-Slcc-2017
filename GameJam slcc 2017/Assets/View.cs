@@ -27,6 +27,7 @@ public class View : MonoBehaviour {
 						transform.gameObject.GetComponent<Enemy> ().EnemyState = State.Chasing;
 					else
 						Debug.Log ("something's in the way");
+                        
 				}
 				else
 					transform.gameObject.GetComponent<Enemy> ().EnemyState = State.Alerted;
@@ -34,5 +35,10 @@ public class View : MonoBehaviour {
 			}
 		}
 
+	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.DrawRay (transform.position, player.position - transform.position);
 	}
 }
