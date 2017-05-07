@@ -53,6 +53,8 @@ public class LoadLevelFromFile : MonoBehaviour {
                     myTransform = D;
                 else if (items[i] == "G")
                     myTransform = G;
+                else if (items[i] == "SG")
+                    myTransform = G;
                 else if (items[i] == "BK")
                     myTransform = BK;
                 else if (items[i] == "BL")
