@@ -145,7 +145,7 @@ Light:
   m_SpotAngle: 39
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -198,6 +198,7 @@ MonoBehaviour:
   viewDistance: 5
   viewAngle: 45
   rotationSpeed: 3
+  lastKnownRadius: 0.3
 --- !u!136 &136224619029445660
 CapsuleCollider:
   m_ObjectHideFlags: 1
