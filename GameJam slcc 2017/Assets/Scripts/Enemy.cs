@@ -53,20 +53,13 @@ public class Enemy : MonoBehaviour {
 		if (other.tag == "AI Destination" && EnemyState == State.Patrolling) {
 				if (counter >= targets.Length - 1) {
 					counter = 0;
-//					print ("set to 0");
 				} else {
 					counter++;
-//					print ("counter++");
 				}
 				agent.SetDestination (targets [counter].position);	
 		}
 
 	}
-
-	//private void Rotate () {
-	//	Quaternion newRotation = Quaternion.AngleAxis (90, Vector3.up);
-	//	transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, .05f);
-	//}
 
     private void view()
     {
@@ -99,12 +92,6 @@ public class Enemy : MonoBehaviour {
 
             }
         }
-
-//		if (transform.position.x == lastKnown.x && transform.position.z == lastKnown.z) {
-//			agent.SetDestination (targets [counter++].position);
-//			EnemyState = State.Patrolling;
-//			print ("I lost him boss :(");
-//		}
 
 		if (PointInsideSphere(new Vector2 (transform.position.x, transform.position.z), 
 			new Vector2(lastKnown.x, lastKnown.z), lastKnownRadius)) {
